@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		E4B8AAD228154C74003A552E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD128154C74003A552E /* User.swift */; };
 		E4B8AAD428154C80003A552E /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD328154C80003A552E /* Repo.swift */; };
-		E4B8AAD728154FDA003A552E /* RepoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD628154FDA003A552E /* RepoRow.swift */; };
+		E4B8AAD728154FDA003A552E /* RepoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD628154FDA003A552E /* RepoRowView.swift */; };
+		E4B8AAD928155325003A552E /* RepoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD828155325003A552E /* RepoDetailView.swift */; };
+		E4B8AADC28155544003A552E /* Repo+mock.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AADB28155544003A552E /* Repo+mock.swift.swift */; };
+		E4B8AADE2815555C003A552E /* User+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AADD2815555B003A552E /* User+mock.swift */; };
 		E4B8DB96281545CA0013ADA0 /* Mixi_iOS_TutorialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8DB95281545CA0013ADA0 /* Mixi_iOS_TutorialApp.swift */; };
-		E4B8DB98281545CA0013ADA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8DB97281545CA0013ADA0 /* ContentView.swift */; };
+		E4B8DB98281545CA0013ADA0 /* RepoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8DB97281545CA0013ADA0 /* RepoListView.swift */; };
 		E4B8DB9A281545CC0013ADA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B8DB99281545CC0013ADA0 /* Assets.xcassets */; };
 		E4B8DB9D281545CC0013ADA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B8DB9C281545CC0013ADA0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -19,10 +22,13 @@
 /* Begin PBXFileReference section */
 		E4B8AAD128154C74003A552E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E4B8AAD328154C80003A552E /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
-		E4B8AAD628154FDA003A552E /* RepoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRow.swift; sourceTree = "<group>"; };
+		E4B8AAD628154FDA003A552E /* RepoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRowView.swift; sourceTree = "<group>"; };
+		E4B8AAD828155325003A552E /* RepoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailView.swift; sourceTree = "<group>"; };
+		E4B8AADB28155544003A552E /* Repo+mock.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repo+mock.swift.swift"; sourceTree = "<group>"; };
+		E4B8AADD2815555B003A552E /* User+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+mock.swift"; sourceTree = "<group>"; };
 		E4B8DB92281545CA0013ADA0 /* Mixi_iOS_Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mixi_iOS_Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B8DB95281545CA0013ADA0 /* Mixi_iOS_TutorialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mixi_iOS_TutorialApp.swift; sourceTree = "<group>"; };
-		E4B8DB97281545CA0013ADA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E4B8DB97281545CA0013ADA0 /* RepoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListView.swift; sourceTree = "<group>"; };
 		E4B8DB99281545CC0013ADA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B8DB9C281545CC0013ADA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,10 +56,20 @@
 		E4B8AAD528154FC1003A552E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E4B8DB97281545CA0013ADA0 /* ContentView.swift */,
-				E4B8AAD628154FDA003A552E /* RepoRow.swift */,
+				E4B8DB97281545CA0013ADA0 /* RepoListView.swift */,
+				E4B8AAD628154FDA003A552E /* RepoRowView.swift */,
+				E4B8AAD828155325003A552E /* RepoDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E4B8AADA28155500003A552E /* PreviewContent */ = {
+			isa = PBXGroup;
+			children = (
+				E4B8AADD2815555B003A552E /* User+mock.swift */,
+				E4B8AADB28155544003A552E /* Repo+mock.swift.swift */,
+			);
+			path = PreviewContent;
 			sourceTree = "<group>";
 		};
 		E4B8DB89281545CA0013ADA0 = {
@@ -78,6 +94,7 @@
 				E4B8DB95281545CA0013ADA0 /* Mixi_iOS_TutorialApp.swift */,
 				E4B8AAD028154C5E003A552E /* Model */,
 				E4B8AAD528154FC1003A552E /* View */,
+				E4B8AADA28155500003A552E /* PreviewContent */,
 				E4B8DB99281545CC0013ADA0 /* Assets.xcassets */,
 				E4B8DB9B281545CC0013ADA0 /* Preview Content */,
 			);
@@ -162,10 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B8AAD728154FDA003A552E /* RepoRow.swift in Sources */,
-				E4B8DB98281545CA0013ADA0 /* ContentView.swift in Sources */,
+				E4B8AADC28155544003A552E /* Repo+mock.swift.swift in Sources */,
+				E4B8AAD728154FDA003A552E /* RepoRowView.swift in Sources */,
+				E4B8DB98281545CA0013ADA0 /* RepoListView.swift in Sources */,
+				E4B8AAD928155325003A552E /* RepoDetailView.swift in Sources */,
 				E4B8DB96281545CA0013ADA0 /* Mixi_iOS_TutorialApp.swift in Sources */,
 				E4B8AAD228154C74003A552E /* User.swift in Sources */,
+				E4B8AADE2815555C003A552E /* User+mock.swift in Sources */,
 				E4B8AAD428154C80003A552E /* Repo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

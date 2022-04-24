@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RepoRow: View {
+struct RepoRowView: View {
     var repo: Repo
     
     var body: some View {
