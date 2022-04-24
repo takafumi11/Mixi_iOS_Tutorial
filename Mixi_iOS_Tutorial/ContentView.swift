@@ -9,12 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Hello, world!")
-                .padding()
-            Text("Good evening, world!")
-                .padding()
+               
+        HStack {
+            Image("GitHubMark")
+                .resizable()
+                .frame(width: 44, height: 44)
+            
+            VStack(alignment: .leading) {
+                Text("Owner Name")
+                    .font(.caption)
+
+                Text("Repository Name")
+                    .font(.body)
+                    .fontWeight(.semibold)
+
+            }
+            
         }
+        
     }
 }
 
