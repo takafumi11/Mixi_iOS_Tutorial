@@ -19,13 +19,21 @@ class ReposStore: ObservableObject {
             "Accept": "application/vnd.github.v3+json"
         ]
         
-        let (data, _) = try! await URLSession.shared.data(for: urlRequest)
-        
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let value = try! decoder.decode([Repo].self, from: data)
-        
-        repos = value
+        do {
+            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                throw URLError(.badServerResponse)
+            }
+
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let value = try decoder.decode([Repo].self, from: data)
+
+            repos = value
+        } catch {
+            print("error: \(error)")
+        }
         
     }
 }
