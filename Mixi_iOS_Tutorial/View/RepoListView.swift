@@ -12,8 +12,20 @@ class ReposStore: ObservableObject {
     @Published private(set) var repos = [Repo]()
 
     func loadRepos() async {
-        try! await Task.sleep(nanoseconds: 1_000_000_000)
-        repos = [.mock1, .mock2, .mock3, .mock4, .mock5]
+        let url = URL(string: "https://api.github.com/orgs/mixigroup/repos")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.allHTTPHeaderFields = [
+            "Accept": "application/vnd.github.v3+json"
+        ]
+        
+        let (data, _) = try! await URLSession.shared.data(for: urlRequest)
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let value = try! decoder.decode([Repo].self, from: data)
+        
+        repos = value
         
     }
 }
@@ -49,5 +61,3 @@ struct RepoListView_Previews: PreviewProvider {
         RepoListView()
     }
 }
-
-

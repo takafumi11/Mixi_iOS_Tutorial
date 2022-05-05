@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct User {
-    var name: String
+struct User: Decodable {
+    let name: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case name = "login"
+    }
     
 }
