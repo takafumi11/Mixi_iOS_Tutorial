@@ -15,50 +15,19 @@ enum Stateful<Value> {
     
 }
 
-@MainActor
-class ReposStore: ObservableObject {
-    
-    @Published private(set) var state: Stateful<[Repo]> = .idle
-
-    func loadRepos() async {
-        let url = URL(string: "https://api.github.com/orgs/mixigroup/repos")!
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        urlRequest.allHTTPHeaderFields = [
-            "Accept": "application/vnd.github.v3+json"
-        ]
-        
-        state = .loading
-        
-        do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
-
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                throw URLError(.badServerResponse)
-            }
-
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let value = try decoder.decode([Repo].self, from: data)
-
-            state = .loaded(value)
-            
-        } catch {
-            state = .failed(error)
-            print("error: \(error)")
-        }
-        
-    }
-}
-
 struct RepoListView: View {
-    @StateObject private var reposStore = ReposStore()
+    @StateObject private var viewModel: RepoListViewModel
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: RepoListViewModel())
+    }
+    
     let isProgressHidden: Bool = false
     
     var body: some View {
         NavigationView {
             Group {
-                switch reposStore.state {
+                switch viewModel.state {
                 case .idle, .loading:
                     ProgressView("loading...")
                 case .loaded([]):
@@ -82,7 +51,7 @@ struct RepoListView: View {
                         Button(
                             action: {
                                 Task {
-                                    await reposStore.loadRepos()
+                                    await viewModel.onRetryButtonTapped()
                                 }
                             },
                             label: {
@@ -97,7 +66,7 @@ struct RepoListView: View {
             .navigationTitle("Repositories")
         }
     .task {
-        await reposStore.loadRepos()
+        await viewModel.onAppear()
     }
     }
     

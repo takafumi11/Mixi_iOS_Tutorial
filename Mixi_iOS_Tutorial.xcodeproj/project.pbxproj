@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		839490572824AEF500EC3EBE /* RepoAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839490562824AEF500EC3EBE /* RepoAPIClient.swift */; };
+		8394905A2824AFF300EC3EBE /* RepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839490592824AFF300EC3EBE /* RepoRepository.swift */; };
+		8394905D2824B07200EC3EBE /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394905C2824B07200EC3EBE /* RepoListViewModel.swift */; };
 		E46B18262823DE2D00BC06DA /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B18252823DE2D00BC06DA /* ErrorView.swift */; };
 		E4B8AAD228154C74003A552E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD128154C74003A552E /* User.swift */; };
 		E4B8AAD428154C80003A552E /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B8AAD328154C80003A552E /* Repo.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		839490562824AEF500EC3EBE /* RepoAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoAPIClient.swift; sourceTree = "<group>"; };
+		839490592824AFF300EC3EBE /* RepoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRepository.swift; sourceTree = "<group>"; };
+		8394905C2824B07200EC3EBE /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		E46B18252823DE2D00BC06DA /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		E4B8AAD128154C74003A552E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E4B8AAD328154C80003A552E /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
@@ -46,6 +52,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		839490552824AEDE00EC3EBE /* APIClients */ = {
+			isa = PBXGroup;
+			children = (
+				839490562824AEF500EC3EBE /* RepoAPIClient.swift */,
+			);
+			path = APIClients;
+			sourceTree = "<group>";
+		};
+		839490582824AFE400EC3EBE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				839490592824AFF300EC3EBE /* RepoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		8394905B2824B05A00EC3EBE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8394905C2824B07200EC3EBE /* RepoListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		E4B8AAD028154C5E003A552E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +124,9 @@
 		E4B8DB94281545CA0013ADA0 /* Mixi_iOS_Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				8394905B2824B05A00EC3EBE /* ViewModels */,
+				839490582824AFE400EC3EBE /* Repositories */,
+				839490552824AEDE00EC3EBE /* APIClients */,
 				E4B8DB95281545CA0013ADA0 /* Mixi_iOS_TutorialApp.swift */,
 				E4B8AAD028154C5E003A552E /* Model */,
 				E4B8AAD528154FC1003A552E /* View */,
@@ -190,7 +223,10 @@
 				E4B8AAD228154C74003A552E /* User.swift in Sources */,
 				E4B8AADE2815555C003A552E /* User+mock.swift in Sources */,
 				E46B18262823DE2D00BC06DA /* ErrorView.swift in Sources */,
+				8394905D2824B07200EC3EBE /* RepoListViewModel.swift in Sources */,
 				E4B8AAD428154C80003A552E /* Repo.swift in Sources */,
+				839490572824AEF500EC3EBE /* RepoAPIClient.swift in Sources */,
+				8394905A2824AFF300EC3EBE /* RepoRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
